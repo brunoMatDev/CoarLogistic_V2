@@ -18,7 +18,7 @@ const services = [
   },
   {
     title: "Courier Internacional",
-    description: "Servicio de courier personalizado desde EEUU. Traemos lo que necesités con total confiabilidad.",
+    description: "Servicio de courier personalizado y rápido desde EEUU. Traemos lo que necesités con total confiabilidad.",
     icon: iconCourier,
     features: ["Compras personales", "Consolidación", "Asesoría completa", "Puerta a puerta"]
   }

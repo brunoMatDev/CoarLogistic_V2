@@ -95,18 +95,7 @@ const Values = () => {
             );
           })}
         </div>
-
-        {/* Bottom CTA */}
-        <div className="text-center mt-16 animate-fade-in-up delay-1000">
-          <div className="inline-block bg-gradient-diagonal rounded-2xl p-8 shadow-elegant">
-            <h3 className="text-2xl font-bold font-brand text-secondary mb-4">
-              ¿Listo para experimentar la diferencia?
-            </h3>
-            <p className="text-muted-foreground mb-6 max-w-md mx-auto">
-              Descubrí cómo nuestros valores se traducen en un servicio excepcional para vos
-            </p>
-          </div>
-        </div>
+ 
       </div>
 
       {/* Background Decoration */}

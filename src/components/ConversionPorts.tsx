@@ -72,8 +72,7 @@ const ConversionPorts = () => {
               </h3>
               
               <p className="text-primary-foreground/70 mb-6 leading-relaxed">
-                Accede a la información oficial de puertos internacionales y sus operaciones
-              </p>
+              Accede fácilmente a la información oficial completa de puertos internacionales y sus operaciones.              </p>
               
               <Button 
                 variant="outline" 

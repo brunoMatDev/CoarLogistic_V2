@@ -1,15 +1,33 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { 
   MapPin, 
   Phone, 
   Mail, 
-  Clock,
   MessageCircle,
   Linkedin,
   Instagram
 } from "lucide-react";
 
 const Contact = () => {
+  // Estado para formulario
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Aquí puedes agregar lógica para enviar el formulario (API, email, etc)
+    alert(`Gracias por contactarnos, ${formData.name}!`);
+    setFormData({ name: "", email: "", message: "" });
+  };
+
   const handleWhatsApp = () => {
     window.open("https://wa.me/+1234567890?text=Hola, quiero información sobre sus servicios", "_blank");
   };
@@ -42,91 +60,62 @@ const Contact = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact Information */}
+          {/* Columna izquierda: Formulario + Redes Sociales */}
           <div className="space-y-8 animate-slide-diagonal">
-            <div className="bg-card/10 backdrop-blur-sm rounded-2xl p-8 border border-primary-foreground/20">
+            {/* Formulario clásico */}
+            <form 
+              onSubmit={handleSubmit} 
+              className="bg-card/10 backdrop-blur-sm rounded-2xl p-8 border border-primary-foreground/20"
+            >
               <h3 className="text-2xl font-bold font-brand text-primary-foreground mb-6">
-                Información de Contacto
+                Envíanos un Mensaje
               </h3>
-              
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0 shadow-glow">
-                    <MapPin className="w-6 h-6 text-primary-foreground" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-primary-foreground mb-1">Oficina Principal</h4>
-                    <p className="text-primary-foreground/70">
-                      Av. Corrientes 1234, CABA<br />
-                      Buenos Aires, Argentina
-                    </p>
-                  </div>
-                </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0 shadow-glow">
-                    <Phone className="w-6 h-6 text-primary-foreground" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-primary-foreground mb-1">Teléfono</h4>
-                    <p className="text-primary-foreground/70">+54 11 1234-5678</p>
-                  </div>
-                </div>
+              <label className="block mb-4">
+                <span className="text-primary-foreground font-semibold mb-1 block">Nombre</span>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full rounded-md border border-primary-foreground/30 bg-transparent px-4 py-2 text-primary-foreground placeholder-primary-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary"
+                  placeholder="Tu nombre"
+                />
+              </label>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0 shadow-glow">
-                    <Mail className="w-6 h-6 text-primary-foreground" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-primary-foreground mb-1">Email</h4>
-                    <p className="text-primary-foreground/70">info@coarlogistic.com</p>
-                  </div>
-                </div>
+              <label className="block mb-4">
+                <span className="text-primary-foreground font-semibold mb-1 block">Email</span>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full rounded-md border border-primary-foreground/30 bg-transparent px-4 py-2 text-primary-foreground placeholder-primary-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary"
+                  placeholder="tu@email.com"
+                />
+              </label>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0 shadow-glow">
-                    <Clock className="w-6 h-6 text-primary-foreground" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-primary-foreground mb-1">Horarios</h4>
-                    <p className="text-primary-foreground/70">
-                      Lunes a Viernes: 9:00 - 18:00<br />
-                      Sábados: 9:00 - 13:00
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+              <label className="block mb-6">
+                <span className="text-primary-foreground font-semibold mb-1 block">Mensaje</span>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={5}
+                  className="w-full rounded-md border border-primary-foreground/30 bg-transparent px-4 py-2 text-primary-foreground placeholder-primary-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary resize-none"
+                  placeholder="Escribe tu mensaje aquí..."
+                />
+              </label>
 
-          {/* CTA and Social Media */}
-          <div className="space-y-8 animate-slide-diagonal delay-200">
-            {/* WhatsApp CTA */}
-            <div className="bg-card/10 backdrop-blur-sm rounded-2xl p-8 border border-primary-foreground/20 text-center">
-              <div className="w-20 h-20 bg-[#25D366] rounded-full flex items-center justify-center mx-auto mb-6 shadow-glow animate-float">
-                <MessageCircle className="w-10 h-10 text-white" />
-              </div>
-              
-              <h3 className="text-2xl font-bold font-brand text-primary-foreground mb-4">
-                ¡Hablemos por WhatsApp!
-              </h3>
-              
-              <p className="text-primary-foreground/70 mb-6">
-                La forma más rápida de obtener información sobre nuestros servicios y recibir una cotización personalizada.
-              </p>
-              
-              <Button 
-                variant="whatsapp" 
-                size="lg"
-                onClick={handleWhatsApp}
-                className="gap-2 font-bold"
-              >
-                <MessageCircle className="w-5 h-5" />
-                Iniciar Conversación
+              <Button type="submit" size="lg" className="font-bold w-full">
+                Enviar Mensaje
               </Button>
-            </div>
+            </form>
 
-            {/* Social Media */}
+            {/* Redes Sociales debajo del formulario */}
             <div className="bg-card/10 backdrop-blur-sm rounded-2xl p-8 border border-primary-foreground/20 text-center">
               <h3 className="text-2xl font-bold font-brand text-primary-foreground mb-6">
                 Seguinos en Redes
@@ -160,24 +149,74 @@ const Contact = () => {
                 </Button>
               </div>
             </div>
+          </div>
 
-            {/* Global Network Mockup */}
+          {/* Columna derecha: Información de contacto + WhatsApp CTA */}
+          <div className="space-y-8 animate-slide-diagonal delay-200">
+            {/* Información de Contacto */}
             <div className="bg-card/10 backdrop-blur-sm rounded-2xl p-8 border border-primary-foreground/20">
-              <h3 className="text-xl font-bold font-brand text-primary-foreground mb-4 text-center">
-                Red Global COAR
+              <h3 className="text-2xl font-bold font-brand text-primary-foreground mb-6">
+                Información de Contacto
               </h3>
-              <div className="relative h-40 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-primary-foreground/50 text-sm">
-                    Conectando el mundo a través de la logística
+              
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0 shadow-glow">
+                    <MapPin className="w-6 h-6 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-primary-foreground mb-1">Ubicación</h4>
+                    <p className="text-primary-foreground/70">
+                      Buenos Aires, Argentina
+                    </p>
                   </div>
                 </div>
-                {/* Animated Connection Points */}
-                <div className="absolute top-4 left-4 w-2 h-2 bg-primary rounded-full animate-pulse" />
-                <div className="absolute top-8 right-6 w-2 h-2 bg-primary rounded-full animate-pulse delay-500" />
-                <div className="absolute bottom-6 left-8 w-2 h-2 bg-primary rounded-full animate-pulse delay-1000" />
-                <div className="absolute bottom-4 right-4 w-2 h-2 bg-primary rounded-full animate-pulse delay-1500" />
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0 shadow-glow">
+                    <Phone className="w-6 h-6 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-primary-foreground mb-1">Teléfono</h4>
+                    <p className="text-primary-foreground/70">+54 11 1234-5678</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0 shadow-glow">
+                    <Mail className="w-6 h-6 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-primary-foreground mb-1">Email</h4>
+                    <p className="text-primary-foreground/70">info@coarlogistic.com</p>
+                  </div>
+                </div>
               </div>
+            </div>
+
+            {/* WhatsApp CTA */}
+            <div className="bg-card/10 backdrop-blur-sm rounded-2xl p-8 border border-primary-foreground/20 text-center">
+              <div className="w-20 h-20 bg-[#25D366] rounded-full flex items-center justify-center mx-auto mb-6 shadow-glow animate-float">
+                <MessageCircle className="w-10 h-10 text-white" />
+              </div>
+              
+              <h3 className="text-2xl font-bold font-brand text-primary-foreground mb-4">
+                ¡Hablemos por WhatsApp!
+              </h3>
+              
+              <p className="text-primary-foreground/70 mb-6">
+                La forma más rápida de obtener información sobre nuestros servicios y recibir una cotización personalizada.
+              </p>
+              
+              <Button 
+                variant="whatsapp" 
+                size="lg"
+                onClick={handleWhatsApp}
+                className="gap-2 font-bold"
+              >
+                <MessageCircle className="w-5 h-5" />
+                Iniciar Conversación
+              </Button>
             </div>
           </div>
         </div>
