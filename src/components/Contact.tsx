@@ -59,10 +59,10 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto items-start lg:items-center">
           {/* Columna izquierda: Formulario + Redes Sociales */}
-          <div className="space-y-8 animate-slide-diagonal">
-            {/* Formulario clásico */}
+          <div className="space-y-8 max-w-lg w-full mx-auto lg:mx-0">
+          {/* Formulario clásico */}
             <form 
               onSubmit={handleSubmit} 
               className="bg-card/10 backdrop-blur-sm rounded-2xl p-8 border border-primary-foreground/20"
@@ -152,8 +152,8 @@ const Contact = () => {
           </div>
 
           {/* Columna derecha: Información de contacto + WhatsApp CTA */}
-          <div className="space-y-8 animate-slide-diagonal delay-200">
-            {/* Información de Contacto */}
+          <div className="space-y-8 max-w-lg w-full mx-auto lg:mx-0">
+          {/* Información de Contacto */}
             <div className="bg-card/10 backdrop-blur-sm rounded-2xl p-8 border border-primary-foreground/20">
               <h3 className="text-2xl font-bold font-brand text-primary-foreground mb-6">
                 Información de Contacto
