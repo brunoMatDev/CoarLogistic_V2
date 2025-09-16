@@ -12,14 +12,14 @@ const WhatsAppFloat = () => {
         variant="whatsapp"
         size="lg"
         onClick={handleWhatsApp}
-        className="rounded-full w-16 h-16 p-0 shadow-glow hover:shadow-elegant transition-all duration-300 hover:scale-110"
+        className="rounded-full w-16 h-16 p-0 shadow-glow hover:shadow-elegant hover:scale-110"
         aria-label="Contactar por WhatsApp"
       >
         <MessageCircle className="w-8 h-8" />
       </Button>
       
       {/* Floating tooltip */}
-      <div className="absolute bottom-full right-0 mb-2 opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+      <div className="absolute bottom-full right-0 mb-2 opacity-0 hover:opacity-100 pointer-events-none">
         <div className="bg-secondary text-primary-foreground text-sm px-3 py-2 rounded-lg whitespace-nowrap shadow-card">
           ¡Chateá con nosotros!
           <div className="absolute top-full right-4 border-4 border-transparent border-t-secondary"></div>

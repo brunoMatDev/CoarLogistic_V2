@@ -33,7 +33,7 @@ const ConversionPorts = () => {
           <div className="group bg-card/10 backdrop-blur-sm rounded-2xl p-8 border border-primary-foreground/20 hover:border-primary/50 transition-all duration-300 hover:scale-105 animate-slide-diagonal">
             <div className="text-center">
               <div className="mb-6">
-                <div className="w-16 h-16 mx-auto bg-gradient-accent rounded-full flex items-center justify-center shadow-glow group-hover:shadow-elegant transition-all duration-300 animate-float">
+                <div className="w-16 h-16 mx-auto bg-gradient-accent rounded-full flex items-center justify-center shadow-glow group-hover:shadow-elegant transition-all duration-300">
                   <DollarSign className="w-8 h-8 text-primary-foreground" />
                 </div>
               </div>
@@ -62,7 +62,7 @@ const ConversionPorts = () => {
           <div className="group bg-card/10 backdrop-blur-sm rounded-2xl p-8 border border-primary-foreground/20 hover:border-primary/50 transition-all duration-300 hover:scale-105 animate-slide-diagonal delay-200">
             <div className="text-center">
               <div className="mb-6">
-                <div className="w-16 h-16 mx-auto bg-gradient-accent rounded-full flex items-center justify-center shadow-glow group-hover:shadow-elegant transition-all duration-300 animate-float">
+                <div className="w-16 h-16 mx-auto bg-gradient-accent rounded-full flex items-center justify-center shadow-glow group-hover:shadow-elegant transition-all duration-300">
                   <Anchor className="w-8 h-8 text-primary-foreground" />
                 </div>
               </div>

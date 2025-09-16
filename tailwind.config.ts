@@ -107,7 +107,6 @@ export default {
         "float": "float 3s ease-in-out infinite",
         "slide-diagonal": "slide-diagonal 0.8s ease-out",
         "fade-in-up": "fade-in-up 0.6s ease-out",
-        "glow-pulse": "glow-pulse 2s ease-in-out infinite",
       },
       backgroundImage: {
         'gradient-hero': 'var(--gradient-hero)',
