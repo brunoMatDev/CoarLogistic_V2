@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* COAR LOGISTIC Brand Colors */
+    --background: 0 0% 100%;
+    --foreground: 202 85% 18%; /* #023A5B - Coar Blue */
+
+    --card: 0 0% 100%;
+    --card-foreground: 202 85% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 202 85% 18%;
+
+    /* Primary Orange - Dynamic & Speed */
+    --primary: 19 100% 59%; /* #FF7F32 */
+    --primary-foreground: 0 0% 99%; /* #FCFEFF */
+    --primary-glow: 19 100% 70%;
+
+    /* Secondary Blue - Trust & Reliability */
+    --secondary: 202 85% 18%; /* #023A5B */
+    --secondary-foreground: 0 0% 99%;
+
+    /* Accent & Supporting Colors */
+    --muted: 210 20% 96%;
+    --muted-foreground: 202 40% 40%;
+
+    --accent: 19 100% 59%;
+    --accent-foreground: 0 0% 99%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 99%;
+
+    --border: 210 15% 90%;
+    --input: 210 15% 95%;
+    --ring: 19 100% 59%;
+
+    --radius: 1rem;
+
+    /* Brand Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+    --gradient-diagonal: linear-gradient(45deg, hsl(var(--primary) / 0.1) 0%, hsl(var(--secondary) / 0.1) 100%);
+    --gradient-accent: linear-gradient(90deg, hsl(var(--primary)) 0%, hsl(var(--primary-glow)) 100%);
+
+    /* Shadows & Effects */
+    --shadow-elegant: 0 20px 60px -10px hsl(var(--primary) / 0.3);
+    --shadow-card: 0 10px 30px -5px hsl(var(--secondary) / 0.1);
+    --shadow-glow: 0 0 50px hsl(var(--primary) / 0.4);
+
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 202 85% 18%; /* #023A5B */
+    --foreground: 0 0% 99%; /* #FCFEFF */
+
+    --card: 202 85% 18%;
+    --card-foreground: 0 0% 99%;
+
+    --popover: 202 85% 18%;
+    --popover-foreground: 0 0% 99%;
+
+    --primary: 19 100% 59%; /* #FF7F32 */
+    --primary-foreground: 0 0% 99%;
+
+    --secondary: 210 20% 25%;
+    --secondary-foreground: 0 0% 99%;
+
+    --muted: 210 20% 25%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 19 100% 59%;
+    --accent-foreground: 0 0% 99%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 99%;
+
+    --border: 210 20% 25%;
+    --input: 210 20% 25%;
+    --ring: 19 100% 59%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
