@@ -2,24 +2,26 @@ import { Card } from "@/components/ui/card";
 import iconMaritime from "@/assets/icon-maritime.png";
 import iconAir from "@/assets/icon-air.png";
 import iconCourier from "@/assets/icon-courier.png";
+import { FaShip, FaPlane, FaUser } from "react-icons/fa";
+
 
 const services = [
   {
     title: "Transporte Marítimo",
     description: "Envíos internacionales por vía marítima con la mayor eficiencia y seguridad. Ideal para cargas grandes y económicas.",
-    icon: iconMaritime,
+    icon: FaShip,
     features: ["Carga completa", "Seguridad garantizada", "Tracking 24/7", "Tarifas competitivas"]
   },
   {
     title: "Transporte Aéreo",
     description: "La velocidad que necesás para tus envíos urgentes. Conectamos continentes en horas, no en semanas.",
-    icon: iconAir,
+    icon: FaPlane,
     features: ["Envío express", "Entrega rápida", "Carga aérea", "Servicio premium"]
   },
   {
     title: "Courier Internacional",
     description: "Servicio de courier personalizado y rápido desde EEUU. Traemos lo que necesités con total confiabilidad.",
-    icon: iconCourier,
+    icon: FaUser,
     features: ["Compras personales", "Consolidación", "Asesoría completa", "Puerta a puerta"]
   }
 ];
@@ -41,23 +43,19 @@ const Services = () => {
         {/* Services Grid */}
         <div className="grid md:grid-cols-3 gap-8 relative">
           {services.map((service, index) => (
-            <Card 
-              key={index} 
+            <Card
+              key={index}
               className="group relative overflow-hidden bg-card/80 backdrop-blur-sm border-0 shadow-card hover:shadow-glow transition-all duration-500 hover:scale-105 animate-slide-diagonal"
               style={{ animationDelay: `${index * 200}ms` }}
             >
               {/* Diagonal Background Effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 transform -skew-y-2 scale-110 group-hover:scale-125 transition-transform duration-500" />
-              
+
               <div className="relative p-8 text-center">
                 {/* Service Icon */}
                 <div className="mb-6 relative">
-                  <div className="w-20 h-20 mx-auto bg-gradient-hero rounded-full p-4 shadow-elegant group-hover:shadow-glow transition-all">
-                    <img 
-                      src={service.icon} 
-                      alt={service.title} 
-                      className="w-full h-full object-contain filter brightness-0 invert"
-                    />
+                  <div className="w-20 h-20 mx-auto bg-gradient-hero rounded-full p-4 shadow-elegant group-hover:shadow-glow transition-all flex items-center justify-center text-primary">
+                    <service.icon className="w-full h-full text-white" />
                   </div>
                 </div>
 
@@ -65,7 +63,7 @@ const Services = () => {
                 <h3 className="text-2xl font-bold font-brand text-secondary mb-4 group-hover:text-primary transition-colors">
                   {service.title}
                 </h3>
-                
+
                 <p className="text-muted-foreground mb-6 leading-relaxed">
                   {service.description}
                 </p>
