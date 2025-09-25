@@ -77,8 +77,8 @@ const Values = () => {
                 <div className="relative">
                   {/* Icon */}
                   <div className="mb-4">
-                    <div className="w-12 h-12 bg-gradient-hero rounded-lg flex items-center justify-center shadow-card group-hover:shadow-glow transition-all duration-300">
-                      <IconComponent className="w-6 h-6 text-primary-foreground" />
+                    <div className="w-12 h-12 rounded-lg flex items-center justify-center shadow-card group-hover:shadow-glow transition-all duration-300 bg-[hsl(var(--primary))]">
+                      <IconComponent className="w-6 h-6 text-white" />
                     </div>
                   </div>
 

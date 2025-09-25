@@ -99,21 +99,21 @@ const Footer = () => {
               
               <button
                 onClick={handleLinkedIn}
-                className="w-10 h-10 bg-primary/20 hover:bg-primary rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-glow"
+                className="w-10 h-10 bg-secondary/20 hover:bg-[#0A66C2] rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-glow"
               >
-                <Linkedin className="w-5 h-5 text-primary" />
+                <Linkedin className="w-5 h-5 text-white" />
               </button>
               
               <button
                 onClick={handleInstagram}
-                className="w-10 h-10 bg-primary/20 hover:bg-primary rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-glow"
+                className="w-10 h-10 bg-secondary/20 hover:bg-[#E4405F] rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-glow"
               >
-                <Instagram className="w-5 h-5 text-primary" />
+                <Instagram className="w-5 h-5 text-white" />
               </button>
               
               <button
                 onClick={handleWhatsApp}
-                className="w-10 h-10 bg-[#25D366] hover:bg-[#1DA851] rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-glow"
+                className="w-10 h-10 bg-secondary/20 hover:bg-[#25D366] rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-glow"
               >
                 <MessageCircle className="w-5 h-5 text-white" />
               </button>

@@ -41,8 +41,9 @@ const Hero = () => {
         <div className="animate-fade-in-up delay-200">
           <Button 
             size="xl"
+            variant="outline"
             onClick={handleContactClick}
-            className="font-bold px-10 py-4"
+            className="font-bold px-10 py-4 border-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground"
           >
             Contáctanos
           </Button>

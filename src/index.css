@@ -8,49 +8,63 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* COAR LOGISTIC Brand Colors */
-    --background: 0 0% 100%;
-    --foreground: 202 85% 18%; /* #023A5B - Coar Blue */
+    /* COAR LOGISTIC Brand Colors - Updated Teal Palette */
+    /* Base neutrals */
+    --background: 180 17% 97%; /* #F4F7F7 */
+    --foreground: 184 100% 15%; /* #00494E text dark */
 
     --card: 0 0% 100%;
-    --card-foreground: 202 85% 18%;
+    --card-foreground: 184 100% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 202 85% 18%;
+    --popover-foreground: 184 100% 15%;
 
-    /* Primary Orange - Dynamic & Speed */
+    /* Primary Orange (CTA / hover naranja solicitado) */
     --primary: 19 100% 59%; /* #FF7F32 */
     --primary-foreground: 0 0% 99%; /* #FCFEFF */
     --primary-glow: 19 100% 70%;
 
-    /* Secondary Blue - Trust & Reliability */
-    --secondary: 202 85% 18%; /* #023A5B */
+    /* Secondary Teal (brand teal family) */
+    --secondary: 184 100% 25%; /* #00767E */
     --secondary-foreground: 0 0% 99%;
 
-    /* Accent & Supporting Colors */
-    --muted: 210 20% 96%;
-    --muted-foreground: 202 40% 40%;
+    /* Tonal variants for teal usage */
+    --teal-950: 184 100% 16%; /* #00494E */
+    --teal-800: 184 100% 20%; /* ~#004D52 */
+    --teal-700: 184 100% 26%; /* #00636A */
+    --teal-600: 184 100% 31%; /* #00767E base-ish */
+    --teal-500: 184 100% 39%; /* #00919B */
+    --teal-400: 184 56% 45%;  /* #33AAB2 approx */
+    --teal-300: 184 46% 66%;  /* #80D4D9 approx */
+    --teal-200: 184 53% 53%;  /* #4DBCC3 */
 
-    --accent: 19 100% 59%;
+    /* Complementary deep red for accents */
+    --complement: 3 100% 25%; /* #7E0800 */
+
+    /* Accent & Supporting Colors */
+    --muted: 180 17% 97%;
+    --muted-foreground: 184 35% 35%;
+
+    --accent: 184 56% 45%; /* hover/active teal */
     --accent-foreground: 0 0% 99%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 99%;
 
-    --border: 210 15% 90%;
-    --input: 210 15% 95%;
+    --border: 184 20% 85%;
+    --input: 184 20% 94%;
     --ring: 19 100% 59%;
 
     --radius: 1rem;
 
-    /* Brand Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
-    --gradient-diagonal: linear-gradient(45deg, hsl(var(--primary) / 0.1) 0%, hsl(var(--secondary) / 0.1) 100%);
+    /* Brand Gradients - updated to use teal */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--teal-500)) 0%, hsl(var(--secondary)) 100%);
+    --gradient-diagonal: linear-gradient(45deg, hsl(var(--primary) / 0.08) 0%, hsl(var(--secondary) / 0.12) 100%);
     --gradient-accent: linear-gradient(90deg, hsl(var(--primary)) 0%, hsl(var(--primary-glow)) 100%);
 
     /* Shadows & Effects */
-    --shadow-elegant: 0 20px 60px -10px hsl(var(--primary) / 0.3);
-    --shadow-card: 0 10px 30px -5px hsl(var(--secondary) / 0.1);
+    --shadow-elegant: 0 20px 60px -10px hsl(var(--teal-500) / 0.25);
+    --shadow-card: 0 10px 30px -5px hsl(var(--secondary) / 0.12);
     --shadow-glow: 0 0 50px hsl(var(--primary) / 0.4);
 
     /* Animations */
@@ -58,49 +72,42 @@ All colors MUST be HSL.
     --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 202 85% 18%; /* #023A5B */
+    --background: 184 100% 16%; /* #00494E */
     --foreground: 0 0% 99%; /* #FCFEFF */
 
-    --card: 202 85% 18%;
+    --card: 184 100% 20%;
     --card-foreground: 0 0% 99%;
 
-    --popover: 202 85% 18%;
+    --popover: 184 100% 20%;
     --popover-foreground: 0 0% 99%;
 
-    --primary: 19 100% 59%; /* #FF7F32 */
+    --primary: 19 100% 59%;
     --primary-foreground: 0 0% 99%;
 
-    --secondary: 210 20% 25%;
+    --secondary: 184 100% 25%;
     --secondary-foreground: 0 0% 99%;
 
-    --muted: 210 20% 25%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 184 30% 22%;
+    --muted-foreground: 184 30% 75%;
 
-    --accent: 19 100% 59%;
+    --accent: 184 56% 45%;
     --accent-foreground: 0 0% 99%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 99%;
 
-    --border: 210 20% 25%;
-    --input: 210 20% 25%;
+    --border: 184 30% 28%;
+    --input: 184 30% 28%;
     --ring: 19 100% 59%;
   }
 }

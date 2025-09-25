@@ -110,7 +110,7 @@ const Contact = () => {
                 />
               </label>
 
-              <Button type="submit" size="lg" className="font-bold w-full">
+              <Button type="submit" size="lg" variant="outline" className="font-bold w-full border-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground">
                 Enviar Mensaje
               </Button>
             </form>
@@ -126,7 +126,7 @@ const Contact = () => {
                   variant="outline"
                   size="lg"
                   onClick={handleLinkedIn}
-                  className="border-primary-foreground text-primary-foreground hover:bg-primary hover:border-primary"
+                  className="border-primary-foreground text-primary-foreground hover:bg-[#0A66C2] hover:border-[#0A66C2] hover:text-white"
                 >
                   <Linkedin className="w-5 h-5" />
                 </Button>
@@ -135,15 +135,16 @@ const Contact = () => {
                   variant="outline"
                   size="lg"
                   onClick={handleInstagram}
-                  className="border-primary-foreground text-primary-foreground hover:bg-primary hover:border-primary"
+                  className="border-primary-foreground text-primary-foreground hover:bg-[#E4405F] hover:border-[#E4405F] hover:text-white"
                 >
                   <Instagram className="w-5 h-5" />
                 </Button>
                 
                 <Button
-                  variant="whatsapp"
+                  variant="outline"
                   size="lg"
                   onClick={handleWhatsApp}
+                  className="border-primary-foreground text-primary-foreground hover:bg-[#25D366] hover:border-[#25D366] hover:text-white"
                 >
                   <MessageCircle className="w-5 h-5" />
                 </Button>
@@ -160,19 +161,17 @@ const Contact = () => {
               </h3>
               
               <div className="space-y-6">
-                <div className="flex items-start gap-4">
+                <button className="flex items-start gap-4 text-left w-full rounded-lg p-2 transition-colors hover:bg-primary-foreground/10" onClick={() => window.open('https://maps.google.com/?q=Buenos+Aires,Argentina', '_blank')}>
                   <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0 shadow-glow">
                     <MapPin className="w-6 h-6 text-primary-foreground" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-primary-foreground mb-1">Ubicación</h4>
-                    <p className="text-primary-foreground/70">
-                      Buenos Aires, Argentina
-                    </p>
+                    <p className="text-primary-foreground/70">Buenos Aires, Argentina</p>
                   </div>
-                </div>
+                </button>
 
-                <div className="flex items-start gap-4">
+                <button className="flex items-start gap-4 text-left w-full rounded-lg p-2 transition-colors hover:bg-primary-foreground/10" onClick={() => window.open('https://wa.me/+541112345678', '_blank')}>
                   <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0 shadow-glow">
                     <Phone className="w-6 h-6 text-primary-foreground" />
                   </div>
@@ -180,9 +179,9 @@ const Contact = () => {
                     <h4 className="font-semibold text-primary-foreground mb-1">Teléfono</h4>
                     <p className="text-primary-foreground/70">+54 11 1234-5678</p>
                   </div>
-                </div>
+                </button>
 
-                <div className="flex items-start gap-4">
+                <a className="flex items-start gap-4 text-left w-full rounded-lg p-2 transition-colors hover:bg-primary-foreground/10" href="mailto:info@coarlogistic.com">
                   <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0 shadow-glow">
                     <Mail className="w-6 h-6 text-primary-foreground" />
                   </div>
@@ -190,7 +189,7 @@ const Contact = () => {
                     <h4 className="font-semibold text-primary-foreground mb-1">Email</h4>
                     <p className="text-primary-foreground/70">info@coarlogistic.com</p>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
 
@@ -209,10 +208,10 @@ const Contact = () => {
               </p>
               
               <Button 
-                variant="whatsapp" 
+                variant="ghost" 
                 size="lg"
                 onClick={handleWhatsApp}
-                className="gap-2 font-bold"
+                className="gap-2 font-bold bg-transparent border border-[#25D366] text-primary-foreground hover:bg-[#25D366] hover:text-white"
               >
                 <MessageCircle className="w-5 h-5" />
                 Iniciar Conversación

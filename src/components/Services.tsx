@@ -54,7 +54,7 @@ const Services = () => {
               <div className="relative p-8 text-center">
                 {/* Service Icon */}
                 <div className="mb-6 relative">
-                  <div className="w-20 h-20 mx-auto bg-gradient-hero rounded-full p-4 shadow-elegant group-hover:shadow-glow transition-all flex items-center justify-center text-primary">
+                  <div className="w-20 h-20 mx-auto rounded-full p-4 shadow-elegant group-hover:shadow-glow transition-all flex items-center justify-center bg-[hsl(var(--primary))]">
                     <service.icon className="w-full h-full text-white" />
                   </div>
                 </div>
